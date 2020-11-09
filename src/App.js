@@ -1,25 +1,36 @@
-import logo from './logo.svg';
-import './App.css';
+import "./App.css";
+import { Layout } from "antd";
+import MovieContext from "./context/MovieContext";
+import styled from "styled-components";
+import { BrowserRouter as Router, Switch, Route } from "react-router-dom";
+import MainPage from "./components/MainPage";
+import { useMemo, useState } from "react";
+
+const Content = styled(Layout.Content)`
+	&& {
+		padding: 24px 50px;
+		min-height: 280px;
+		background-color: #fff;
+	}
+`;
 
 function App() {
-  return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
-  );
+	const [movie, setMovie] = useState("");
+
+	const movieValue = useMemo(() => ({ movie, setMovie }), [movie, setMovie]);
+	return (
+		<Layout>
+			<MovieContext.Provider value={movieValue}>
+				<Router>
+					<Switch>
+						<Content>
+							<MainPage></MainPage>
+						</Content>
+					</Switch>
+				</Router>
+			</MovieContext.Provider>
+		</Layout>
+	);
 }
 
 export default App;
