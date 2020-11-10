@@ -19,11 +19,11 @@
     "web-vitals": "^0.2.4"
   },
   "scripts": {
-    "start": "env react-scripts start",
-    "build": "env react-scripts build",
+    "start": "node --max_old_space_size=2560 node_modules/.bin/react-scripts start",
+    "build": "node --max_old_space_size=2560 node_modules/.bin/react-scripts build",
     "test": "yarn run cypress open",
     "eject": "react-scripts eject",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix src && npm run build --prefix src"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false"
   },
   "eslintConfig": {
     "extends": [
