@@ -26,7 +26,7 @@ const Content = styled.div`
 const MovieList = () => {
 	const { Meta } = Card;
 	const [list, setList] = useState([]);
-	const { movie, setMovie } = useContext(MovieContext);
+	const { movie } = useContext(MovieContext);
 	let url;
 
 	if (movie) {
@@ -47,7 +47,7 @@ const MovieList = () => {
 
 	useEffect(() => {
 		fetchData(url);
-	}, [movie]);
+	}, [url]);
 
 	const mystyle = {
 		color: "white",

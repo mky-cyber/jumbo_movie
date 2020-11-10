@@ -1,5 +1,4 @@
-import React, { useEffect, useState, useContext } from "react";
-import MovieContext from "../context/MovieContext";
+import React, { useEffect, useState } from "react";
 import buildUrl from "../api/base";
 import { Layout, Divider, Descriptions, Image, Button } from "antd";
 import { useParams } from "react-router";
@@ -29,7 +28,6 @@ export default function MovieDetailPage() {
 	console.log(id);
 	const [detail, setDetail] = useState("");
 	const url = buildUrl("search", id);
-	const { movie } = useContext(MovieContext);
 	console.log("Here is the url:", url);
 
 	async function fetchData(url) {
@@ -44,7 +42,7 @@ export default function MovieDetailPage() {
 
 	useEffect(() => {
 		fetchData(url);
-	}, []);
+	}, [url]);
 	const imgUrl = `https://image.tmdb.org/t/p/w500${detail.poster_path}`;
 	const backImg = `https://image.tmdb.org/t/p/original${detail.backdrop_path}`;
 	const Head = styled(Header)`

@@ -20,7 +20,7 @@ const Search = styled(Input)`
 `;
 
 export default function SearchBar() {
-	const { movie, setMovie } = useContext(MovieContext);
+	const { setMovie } = useContext(MovieContext);
 	return (
 		<Search
 			placeholder="Search"
