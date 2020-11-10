@@ -23,7 +23,7 @@
     "build": "env react-scripts build",
     "test": "yarn run cypress open",
     "eject": "react-scripts eject",
-    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false npm install --prefix src && npm run build --prefix src"
+    "heroku-postbuild": "NPM_CONFIG_PRODUCTION=false"
   },
   "eslintConfig": {
     "extends": [
