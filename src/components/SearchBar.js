@@ -2,6 +2,7 @@ import React, { useContext } from "react";
 import { Input } from "antd";
 import styled from "styled-components";
 import { SearchOutlined } from "@ant-design/icons";
+import MovieContext from "../context/MovieContext";
 
 const Search = styled(Input)`
 	&& {
@@ -11,6 +12,7 @@ const Search = styled(Input)`
 		input,
 		select,
 		textarea,
+		padding-top: 90px;
 		placeholder {
 			color: green;
 		}
@@ -18,6 +20,7 @@ const Search = styled(Input)`
 `;
 
 export default function SearchBar() {
+	const { movie, setMovie } = useContext(MovieContext);
 	return (
 		<Search
 			placeholder="Search"
@@ -26,7 +29,8 @@ export default function SearchBar() {
 			suffix={<SearchOutlined />}
 			onPressEnter={(ev) => {
 				let title = ev.target.value;
-				title = title.replace(/\s/g, '+');
+				title = title.replace(/\s/g, '%20');
+				setMovie(title);
 				console.log(title);
 			}}
 		/>

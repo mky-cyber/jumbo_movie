@@ -9,7 +9,7 @@ export default function buildUrl(type, para) {
 			baseUrl = `https://api.themoviedb.org/3/search/movie?api_key=${key}&query=${para}`;
 			break;
 		case "popular":
-			baseUrl = `https://api.themoviedb.org/3/discover/movie?api_key=${key}&language=en-US&sort_by=popularity.desc&include_adult=false&include_video=false&page=1`;
+			baseUrl = `https://api.themoviedb.org/3/movie/popular?api_key=${key}&language=en-US&page=1`;
 			break;
 		default:
 			baseUrl = "";
