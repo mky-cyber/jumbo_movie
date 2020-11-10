@@ -23,17 +23,16 @@ const Content = styled(Layout.Content)`
 	align-items: center;
 	margin: auto;
 	padding: 0 0.8rem;
-	position: absolute;
+	position: relative;
 	left: 4.53%;
 	top: 32%;
 `;
 
 const SubTitle = styled(Title)`
-	position: absolute;
+	position: relative;
 	left: 1.27%;
 	right: 4.53%;
-	top: 30%;
-	bottom: 75.11%;
+	padding-top: 3rem;
 	font-family: Montserrat;
 	font-style: normal;
 	font-weight: bold;
@@ -100,7 +99,7 @@ const MovieList = () => {
 	};
 
 	return (
-		<Layout>
+		<Layout style={{backgroundColor: "#081b23"}}>
 			{!movie && <SubTitle style={mystyle}>Popular Movies</SubTitle>}
 			{movie && <SubTitle style={mystyle}>Results:</SubTitle>}
 			<Content data-cy="list">

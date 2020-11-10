@@ -15,7 +15,7 @@ const Search = styled(Input)`
 		position: absolute;
 		left: 3%;
 		right: 4.53%;
-		top: -1%;
+		top: 0%;
 		bottom: 81.42%;
 		placeholder {
 			color: green;
