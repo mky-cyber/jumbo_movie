@@ -57,7 +57,7 @@ const MovieList = () => {
 	  };
 
 	return (
-			<Content>
+			<Content data-cy='list'>
 			{!movie &&
 				<h1 style={mystyle}>Popular Movies</h1>
 			}

@@ -58,7 +58,7 @@ export default function MovieDetailPage() {
 	console.log("+++++++++++++++",detail.release_date);
 	// const [year, month, day] = detail.release_date.split("-");
 	return (
-		<Layout>
+		<Layout data-cy='detail'>
 			<Head>
 				<BackButton></BackButton>
 			</Head>
