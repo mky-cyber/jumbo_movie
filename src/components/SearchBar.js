@@ -5,22 +5,27 @@ import { SearchOutlined } from "@ant-design/icons";
 import MovieContext from "../context/MovieContext";
 
 const Search = styled(Input)`
-	&& {
+	&&{
 		color: green;
-		border-radius: 100px;
+		border-radius: 22px;
 		height: 3.5em;
 		input,
 		select,
 		textarea,
-		padding-top: 90px;
+		position: absolute;
+		left: 3%;
+		right: 4.53%;
+		top: 0%;
+		bottom: 81.42%;
 		placeholder {
 			color: green;
 		}
-	}
+		width: 95%;
+	}	
 `;
 
 export default function SearchBar() {
-	const { movie, setMovie } = useContext(MovieContext);
+	const { setMovie } = useContext(MovieContext);
 	return (
 		<Search
 			placeholder="Search"
