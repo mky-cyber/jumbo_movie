@@ -1,0 +1,25 @@
+{
+  "files": {
+    "main.css": "/jumbo_movie/static/css/main.93e96b66.chunk.css",
+    "main.js": "/jumbo_movie/static/js/main.8f6a9f88.chunk.js",
+    "main.js.map": "/jumbo_movie/static/js/main.8f6a9f88.chunk.js.map",
+    "runtime-main.js": "/jumbo_movie/static/js/runtime-main.8bba6cfa.js",
+    "runtime-main.js.map": "/jumbo_movie/static/js/runtime-main.8bba6cfa.js.map",
+    "static/css/2.a10ec74d.chunk.css": "/jumbo_movie/static/css/2.a10ec74d.chunk.css",
+    "static/js/2.461826ab.chunk.js": "/jumbo_movie/static/js/2.461826ab.chunk.js",
+    "static/js/2.461826ab.chunk.js.map": "/jumbo_movie/static/js/2.461826ab.chunk.js.map",
+    "static/js/3.d4fc8d4e.chunk.js": "/jumbo_movie/static/js/3.d4fc8d4e.chunk.js",
+    "static/js/3.d4fc8d4e.chunk.js.map": "/jumbo_movie/static/js/3.d4fc8d4e.chunk.js.map",
+    "index.html": "/jumbo_movie/index.html",
+    "static/css/2.a10ec74d.chunk.css.map": "/jumbo_movie/static/css/2.a10ec74d.chunk.css.map",
+    "static/css/main.93e96b66.chunk.css.map": "/jumbo_movie/static/css/main.93e96b66.chunk.css.map",
+    "static/js/2.461826ab.chunk.js.LICENSE.txt": "/jumbo_movie/static/js/2.461826ab.chunk.js.LICENSE.txt"
+  },
+  "entrypoints": [
+    "static/js/runtime-main.8bba6cfa.js",
+    "static/css/2.a10ec74d.chunk.css",
+    "static/js/2.461826ab.chunk.js",
+    "static/css/main.93e96b66.chunk.css",
+    "static/js/main.8f6a9f88.chunk.js"
+  ]
+}
