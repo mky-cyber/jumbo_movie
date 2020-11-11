@@ -36,7 +36,6 @@ export default function SearchBar() {
 				let title = ev.target.value;
 				title = title.replace(/\s/g, '%20');
 				setMovie(title);
-				console.log(title);
 			}}
 		/>
 	);
