@@ -14,6 +14,5 @@ export default function buildUrl(type, para) {
 		default:
 			baseUrl = "";
 	}
-	console.log("type, para, base url", type, para, baseUrl);
 	return baseUrl;
 }

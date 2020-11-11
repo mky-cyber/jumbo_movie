@@ -1,13 +1,12 @@
 import React, { useEffect, useState } from "react";
 import buildUrl from "../api/base";
-import { Layout, Divider, Row, Col, Image, Button, Typography, Space } from "antd";
+import { Layout, Divider, Row, Col, Image, Button, Space } from "antd";
 import { useParams } from "react-router";
 import styled from "styled-components";
 import { useHistory } from "react-router-dom";
 import { ArrowLeftOutlined } from "@ant-design/icons";
 
 const { Header, Content } = Layout;
-const { Text, Title, Paragraph } = Typography;
 
 const GoBackButton = styled(Button)`
 	background: rgba(0, 0, 0, 0);
@@ -19,7 +18,7 @@ const GoBackButton = styled(Button)`
 
 const MovieTitle = styled.span`
 	color: #e3f4fc;
-	font-family: Roboto;
+	font-family: Montserrat;
 	font-style: bold;
 	font-size: 28px;
 	line-height: 30px;
@@ -55,6 +54,7 @@ const SubTitle = styled.h1`
 	line-height: 24px;
 	line-height: 98.44%;
 	align: Left;
+	font-family: Montserrat;
 	margin-left: 1rem;
 `;
 
@@ -84,16 +84,13 @@ function BackButton() {
 
 export default function MovieDetailPage() {
 	const { id } = useParams();
-	console.log(id);
 	const [detail, setDetail] = useState("");
 	const url = buildUrl("search", id);
-	console.log("Here is the url:", url);
 
 	async function fetchData(url) {
 		const res = await fetch(url);
 		res.json()
 			.then((res) => {
-				console.log(res);
 				setDetail(res);
 			})
 			.catch((err) => console.log(err));
@@ -112,7 +109,6 @@ export default function MovieDetailPage() {
 		width: 100%;
 		height: 20rem;
 	`;
-	console.log("+++++++++++++++", detail.release_date);
 	// const [year, month, day] = detail.release_date.split("-");
 	return (
 		<Layout
@@ -123,7 +119,7 @@ export default function MovieDetailPage() {
 				display: "block",
 				width: "100%",
 				height: "100%",
-				position: "absolute"
+				position: "absolute",
 			}}
 		>
 			<Head>
@@ -134,18 +130,18 @@ export default function MovieDetailPage() {
 					<Col span={4}>
 						<PostImg width={140} src={imgUrl}></PostImg>
 					</Col>
-					<Col span={4}>
+					<Col span={8}>
 						<Space direction="vertical">
 							<MovieTitle>{detail.title}</MovieTitle>
 							<MovieRating>
 								{" "}
 								· {detail.vote_average * 10}% User Score{" "}
-								{Math.floor(detail.runtime / 60)}h {detail.runtime % 60}
+								{Math.floor(detail.runtime / 60)}h{" "}
+								{detail.runtime % 60}
 								min
 							</MovieRating>
 						</Space>
 					</Col>
-
 				</Row>
 				<Divider style={{ borderTop: "1px solid #0F303D" }} />
 				<SubTitle>Overview</SubTitle>

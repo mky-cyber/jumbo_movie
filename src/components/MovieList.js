@@ -19,18 +19,18 @@ const Movie = styled(Card)`
 const Content = styled(Layout.Content)`
 	display: flex;
 	flex-wrap: wrap;
-	justify-content: center;
+	justify-content: space-between;
 	align-items: center;
 	margin: auto;
 	padding: 0 0.8rem;
 	position: relative;
-	left: 4.53%;
-	top: 32%;
+	left: 1%;
+	right:1%;
 `;
 
 const SubTitle = styled(Title)`
 	position: relative;
-	left: 1.27%;
+	left: 4%;
 	right: 4.53%;
 	padding-top: 3rem;
 	font-family: Montserrat;
@@ -79,7 +79,6 @@ const MovieList = () => {
 		const res = await fetch(url);
 		res.json()
 			.then((res) => {
-				console.log(res.results);
 				setList(res.results);
 			})
 			.catch((err) => console.log(err));
@@ -109,9 +108,8 @@ const MovieList = () => {
 						const imgUrl = `https://image.tmdb.org/t/p/w500${poster_path}`;
 						if (title) {
 							return (
-								<Link to={{ pathname: `/movie/${id}` }}>
+								<Link key={index} to={{ pathname: `/movie/${id}` }}>
 									<Movie
-										key={index}
 										hoverable
 										style={{
 											width: 155,
